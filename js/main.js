@@ -1,68 +1,101 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    // Close mobile menu if open after clicking a link
-    const mainNav = document.querySelector(".main-nav")
-    const menuToggle = document.querySelector(".menu-toggle")
-    const body = document.body
+// Custom scripts
+// Smooth scrolling is handled by CSS in style.css
 
-    if (mainNav.classList.contains("active")) {
-      mainNav.classList.remove("active")
-      menuToggle.classList.remove("active")
-      body.classList.remove("menu-open") // Remove body class for overlay
-    }
-  })
-})
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollContainers = document.querySelectorAll('.project-scroll-container');
 
-// "See More" functionality for project cards
-document.querySelectorAll(".see-more-button").forEach((button) => {
-  button.addEventListener("click", function () {
-    const category = this.dataset.category
-    const projectGrid = document.querySelector(`#${category}-section .project-cards-grid`)
-    const hiddenCards = projectGrid.querySelectorAll(".project-card.hidden")
+    scrollContainers.forEach(container => {
+        const scrollContent = container.querySelector('.scroll-content');
+        const leftBtn = container.querySelector('.scroll-left');
+        const rightBtn = container.querySelector('.scroll-right');
 
-    if (hiddenCards.length > 0) {
-      hiddenCards.forEach((card) => {
-        card.classList.remove("hidden")
-      })
-      this.style.display = "none" // Hide the button after showing all
-    }
-  })
-})
+        if (!scrollContent || !leftBtn || !rightBtn) return;
 
-// Mobile Menu Toggle and Header Scroll Behavior
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle")
-  const mainNav = document.querySelector(".main-nav")
-  const body = document.body
-  const siteHeader = document.querySelector(".site-header")
+        // Scroll amount
+        const scrollAmount = 300;
 
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener("click", () => {
-      mainNav.classList.toggle("active")
-      menuToggle.classList.toggle("active") // For animating hamburger icon
-      body.classList.toggle("menu-open") // Toggle body class for overlay
-    })
-  }
+        // Click handlers
+        leftBtn.addEventListener('click', () => {
+            scrollContent.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
 
-  // Hide/Show Header on Scroll
-  let lastScrollY = window.scrollY // Initialize with current scroll position
-  // Use siteHeader.offsetHeight for the actual rendered height of the header
-  const headerThreshold = siteHeader.offsetHeight
+        rightBtn.addEventListener('click', () => {
+            scrollContent.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
 
-  window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY
+        // Visibility logic
+        const updateArrows = () => {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContent;
 
-    // Only hide/show if the mobile menu is NOT open
-    if (!body.classList.contains("menu-open")) {
-      if (currentScrollY > lastScrollY && currentScrollY > headerThreshold) {
-        // Scrolling down and past header threshold
-        siteHeader.classList.add("hidden-header")
-      } else if (currentScrollY < lastScrollY || currentScrollY <= headerThreshold) {
-        // Scrolling up or at the very top
-        siteHeader.classList.remove("hidden-header")
-      }
-    }
-    lastScrollY = currentScrollY
-  })
-})
+            // Show left arrow if scrolled past start
+            if (scrollLeft > 0) {
+                leftBtn.classList.add('visible');
+            } else {
+                leftBtn.classList.remove('visible');
+            }
+
+            // Show right arrow if not at end (allow 1px buffer)
+            if (scrollLeft < scrollWidth - clientWidth - 1) {
+                rightBtn.classList.add('visible');
+            } else {
+                rightBtn.classList.remove('visible');
+            }
+        };
+
+        // Initial check
+        updateArrows();
+
+        // Scroll listener
+        scrollContent.addEventListener('scroll', updateArrows);
+
+        // Resize listener
+        window.addEventListener('resize', updateArrows);
+    });
+
+    // Modal Logic
+    const projectCards = document.querySelectorAll('.card');
+    const modalTitle = document.getElementById('projectModalLabel');
+    const modalImage = document.getElementById('projectModalImage');
+    const modalDescription = document.getElementById('projectModalDescription');
+    const modalLink = document.getElementById('projectModalLink');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', function (e) {
+            // Allow default link behavior if the actual link is clicked
+            // But if they want the modal, they should click the card body/image
+            if (e.target.tagName === 'A') {
+                return;
+            }
+
+            const titleElement = this.querySelector('.card-title');
+            const imageElement = this.querySelector('.card-img-top');
+            const textElement = this.querySelector('.card-text');
+            const linkElement = this.querySelector('a');
+
+            if (!titleElement || !imageElement || !textElement || !linkElement) {
+                return;
+            }
+
+            const title = titleElement.innerText;
+            const imageSrc = imageElement.src;
+
+            // Robust description extraction: clone and remove link
+            const textClone = textElement.cloneNode(true);
+            const linkInClone = textClone.querySelector('a');
+            if (linkInClone) linkInClone.remove();
+            const description = textClone.textContent.trim();
+
+            const linkHref = linkElement.href;
+
+            modalTitle.textContent = title;
+            modalImage.src = imageSrc;
+            modalDescription.textContent = description;
+            modalLink.href = linkHref;
+
+            // Show modal using jQuery (Bootstrap 4 dependency)
+            if (typeof $ !== 'undefined' && typeof $.fn.modal === 'function') {
+                $('#projectModal').modal('show');
+            }
+        });
+    });
+});

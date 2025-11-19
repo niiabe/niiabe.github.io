@@ -1,34 +1,56 @@
-html, body {
-            font-family: 'DM Serif Display', sans-serif;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Remove all vertical scrolling */
-        }
+html,
+body {
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color: white;
     color: #333;
-     min-height: 100vh;
-     min-width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
-.container-fluid, .row {
-            height: 100vh;
-            min-height: 100vh;
-        }
-        main {
-            overflow: auto;
-            height: 100vh;
-        }
-        @media (max-width: 991.98px) {
-            aside, main {
-                height: 50vh;
-            }
-            .row {
-                flex-direction: column;
-            }
-        }
+.container-fluid,
+.row {
+    height: 100vh;
+    min-height: 100vh;
+}
+
+main {
+    overflow: auto;
+    height: 100vh;
+}
+
+@media (max-width: 991.98px) {
+
+    html,
+    body {
+        overflow: auto;
+    }
+
+    .container-fluid,
+    .row {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    aside {
+        height: auto;
+        min-height: 50vh;
+    }
+
+    main {
+        height: auto;
+        min-height: 50vh;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}
 
 header {
     background-color: #da41e7;
@@ -62,6 +84,15 @@ h2 {
     transform: scale(1.05);
 }
 
+.card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
 footer {
     background-color: #da41e7;
     color: white;
@@ -72,5 +103,61 @@ footer {
     width: 100%;
 }
 
+/* Scroll Arrow Styles */
+.project-scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(218, 65, 231, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    /* Hidden by default, shown via JS */
+    pointer-events: none;
+}
 
+.scroll-arrow.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-arrow:hover {
+    background-color: rgba(218, 65, 231, 1);
+}
+
+.scroll-left {
+    left: -20px;
+}
+
+.scroll-right {
+    right: -20px;
+}
+
+.scroll-content {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+.scroll-content::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* Chrome/Safari/Webkit */
+}
