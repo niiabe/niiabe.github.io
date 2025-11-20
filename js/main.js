@@ -52,6 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateArrows);
     });
 
+    // Truncate descriptions on load
+    const truncateDescriptions = () => {
+        const cardTexts = document.querySelectorAll('.card-text');
+        const maxLength = 100;
+
+        cardTexts.forEach(textElement => {
+            // Get the first text node (ignoring the link element for now)
+            const firstChild = textElement.firstChild;
+
+            if (firstChild && firstChild.nodeType === Node.TEXT_NODE) {
+                const originalText = firstChild.textContent.trim();
+
+                // Store full text for modal
+                textElement.setAttribute('data-full-description', originalText);
+
+                if (originalText.length > maxLength) {
+                    firstChild.textContent = originalText.substring(0, maxLength) + '... ';
+                }
+            }
+        });
+    };
+
+    truncateDescriptions();
+
     // Modal Logic
     const projectCards = document.querySelectorAll('.card');
     const modalTitle = document.getElementById('projectModalLabel');
@@ -79,11 +103,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = titleElement.innerText;
             const imageSrc = imageElement.src;
 
-            // Robust description extraction: clone and remove link
-            const textClone = textElement.cloneNode(true);
-            const linkInClone = textClone.querySelector('a');
-            if (linkInClone) linkInClone.remove();
-            const description = textClone.textContent.trim();
+            // Robust description extraction: use data attribute if available, else clone method
+            let description;
+            if (textElement.hasAttribute('data-full-description')) {
+                description = textElement.getAttribute('data-full-description');
+            } else {
+                const textClone = textElement.cloneNode(true);
+                const linkInClone = textClone.querySelector('a');
+                if (linkInClone) linkInClone.remove();
+                description = textClone.textContent.trim();
+            }
 
             const linkHref = linkElement.href;
 
