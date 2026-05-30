@@ -12,7 +12,7 @@ A single-page responsive portfolio for GitHub Pages, built with Bootstrap and Ta
 - **SEO Friendly:** Includes meta tags and semantic HTML.
 - **Material Design Colors:** Uses `#da41e7` as the accent color.
 - **Responsive:** Adapts to desktop and mobile screens with optimized scrolling.
-- **Placeholder Images:** Uses [placehold.co](https://placehold.co/) for demo images.
+- **Project Images:** Custom project screenshots and icons displayed in project cards.
 
 ## Usage
 
@@ -28,7 +28,7 @@ A single-page responsive portfolio for GitHub Pages, built with Bootstrap and Ta
 ## Customization
 
 - **Colors:** Change `#da41e7` in the HTML or your CSS for a different accent.
-- **Images:** Replace `https://placehold.co/600x400` with your project images.
+- **Images:** Replace images in `img/Projects/` with your own project screenshots.
 - **Cards:** Add or remove cards in each section as needed.
 
 ## Live Demo

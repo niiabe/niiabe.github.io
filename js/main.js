@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             modalTitle.textContent = title;
             modalImage.src = imageSrc;
+            modalImage.alt = title;
             modalDescription.textContent = description;
             modalLink.href = linkHref;
 

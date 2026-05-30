@@ -19,8 +19,11 @@ body {
     min-height: 100vh;
 }
 
-main {
-    overflow: auto;
+.sidebar-panel {
+    height: 100vh;
+}
+
+.main-content {
     height: 100vh;
 }
 
@@ -37,12 +40,12 @@ main {
         min-height: 100vh;
     }
 
-    aside {
+    .sidebar-panel {
         height: auto;
         min-height: 50vh;
     }
 
-    main {
+    .main-content {
         height: auto;
         min-height: 50vh;
     }
@@ -50,17 +53,6 @@ main {
     .row {
         flex-direction: column;
     }
-}
-
-header {
-    background-color: #da41e7;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    color: white;
-    margin: 0;
 }
 
 section {
@@ -72,18 +64,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-.project {
-    border: 1px solid #da41e7;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
-    transition: transform 0.3s;
-}
-
-.project:hover {
-    transform: scale(1.05);
-}
-
 .card {
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -91,16 +71,6 @@ h2 {
 
 .card:hover {
     transform: translateY(-5px);
-}
-
-footer {
-    background-color: #da41e7;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
 /* Scroll Arrow Styles */
@@ -156,8 +126,3 @@ footer {
     /* IE 10+ */
 }
 
-.scroll-content::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-    /* Chrome/Safari/Webkit */
-}
