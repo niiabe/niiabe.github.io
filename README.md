@@ -6,7 +6,7 @@ A single-page responsive portfolio for GitHub Pages, built with Bootstrap and Ta
 ## Features
 
 - **Left About Panel:** Fixed sidebar with your name, roles, and navigation.
-- **Horizontal Project Sections:** Web Development, Graphic Design, and Video/Motion projects are displayed in horizontally scrollable card carousels (Netflix-style).
+- **Horizontal Project Sections:** Web Development, Graphic Design, Video/Motion, and Mobile App projects are displayed in horizontally scrollable card carousels (Netflix-style).
 - **Scroll Navigation Arrows:** Interactive left/right arrows for easy horizontal scrolling through projects.
 - **Project Modals:** Click on any project card to view details in a popup modal.
 - **SEO Friendly:** Includes meta tags and semantic HTML.
