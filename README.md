@@ -1,7 +1,7 @@
 # portfolio
 Landing page for Nii Abe Abbey Protfolio 
 
-A single-page responsive portfolio for GitHub Pages, built with Bootstrap and Tailwind CSS, using a violet storm color scheme (`#6C3FAA` primary and `#C026D3` accent).
+A single-page responsive portfolio for GitHub Pages, built with Bootstrap and Tailwind CSS, using a material-inspired color scheme (`#D633E1` and white).
 
 ## Features
 
@@ -10,7 +10,7 @@ A single-page responsive portfolio for GitHub Pages, built with Bootstrap and Ta
 - **Scroll Navigation Arrows:** Interactive left/right arrows for easy horizontal scrolling through projects.
 - **Project Modals:** Click on any project card to view details in a popup modal.
 - **SEO Friendly:** Includes meta tags and semantic HTML.
-- **Color Scheme:** Violet storm palette — `#6C3FAA` (primary) and `#C026D3` (accent).
+- **Material Design Colors:** Uses `#D633E1` as the accent color.
 - **Responsive:** Adapts to desktop and mobile screens with optimized scrolling.
 - **Project Images:** Custom project screenshots and icons displayed in project cards.
 
@@ -27,7 +27,7 @@ A single-page responsive portfolio for GitHub Pages, built with Bootstrap and Ta
 
 ## Customization
 
-- **Colors:** Change `#6C3FAA` and `#C026D3` in the HTML or your CSS for a different scheme.
+- **Colors:** Change `#D633E1` in the HTML or your CSS for a different accent.
 - **Images:** Replace images in `img/Projects/` with your own project screenshots.
 - **Cards:** Add or remove cards in each section as needed.
 
