@@ -60,7 +60,7 @@ section {
 }
 
 h2 {
-    color: #da41e7;
+    color: #D633E1;
     margin-bottom: 20px;
 }
 
@@ -84,7 +84,7 @@ h2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(218, 65, 231, 0.8);
+    background-color: rgba(214, 51, 225, 0.8);
     color: white;
     border: none;
     border-radius: 50%;
@@ -108,7 +108,7 @@ h2 {
 }
 
 .scroll-arrow:hover {
-    background-color: rgba(218, 65, 231, 1);
+    background-color: rgba(214, 51, 225, 1);
 }
 
 .scroll-left {
