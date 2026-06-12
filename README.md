@@ -51,6 +51,12 @@ A single-page responsive portfolio showcasing my work across **Web Development**
         <a href="https://github.com/niiabe/CampbellKiosk">GitHub</a>
       </td>
       <td align="center" width="200">
+        <img src="img/Projects/Mobile/HappyLotto.png" width="100"><br>
+        <strong>HappyLotto POS</strong><br>
+        <sub>Flutter lottery POS app with thermal printing and QR codes</sub><br>
+        <a href="https://github.com/niiabe/happy_lotto">GitHub</a>
+      </td>
+      <td align="center" width="200">
         <img src="img/Projects/Mobile/PrintEasePOS.png" width="100"><br>
         <strong>PrintEase POS</strong><br>
         <sub>Offline-first Flutter thermal receipt printer app</sub><br>
