@@ -45,6 +45,18 @@ A single-page responsive portfolio showcasing my work across **Web Development**
   <table>
     <tr>
       <td align="center" width="200">
+        <img src="img/Projects/Mobile/CampbellKiosk.png" width="100"><br>
+        <strong>CampBell Kiosk</strong><br>
+        <sub>Android kiosk app with app whitelisting, admin panel, and remote config</sub><br>
+        <a href="https://github.com/niiabe/CampbellKiosk">GitHub</a>
+      </td>
+      <td align="center" width="200">
+        <img src="img/Projects/Mobile/HappyLotto.png" width="100"><br>
+        <strong>HappyLotto POS</strong><br>
+        <sub>Flutter lottery POS app with thermal printing and QR codes</sub><br>
+        <a href="https://github.com/niiabe/happy_lotto">GitHub</a>
+      </td>
+      <td align="center" width="200">
         <img src="img/Projects/Mobile/PrintEasePOS.png" width="100"><br>
         <strong>PrintEase POS</strong><br>
         <sub>Offline-first Flutter thermal receipt printer app</sub><br>
@@ -63,6 +75,7 @@ A single-page responsive portfolio showcasing my work across **Web Development**
 ### Graphic Design
 | Project | Tool | Link |
 |---------|------|------|
+| CampBell Kiosk Logo | Custom | [View](https://github.com/niiabe/CampbellKiosk) |
 | Adwoa Kami Charity Foundation | Canva | [View](https://www.canva.com/design/DAG7YDxBp6M/9tETjVjfKeUTAk6N3QBswA/view) |
 | SOHI with NRSA | Canva | [View](https://www.canva.com/design/DAFjwGECJO4/ozLBtydsp-POJzh3ai6XQA/view) |
 | Green Ghana Day | Canva | [View](https://www.canva.com/design/DAFlUm0WQxU/ERf1wNOMpXjwb4uZTvOrlw/view) |
