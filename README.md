@@ -69,12 +69,21 @@ A single-page responsive portfolio showcasing my work across **Web Development**
         <a href="https://github.com/niiabe/ytmusix-flowos">GitHub</a>
       </td>
     </tr>
+    <tr>
+      <td align="center" width="200">
+        <img src="img/Projects/Mobile/zooped.png" width="100"><br>
+        <strong>Zooped App</strong><br>
+        <sub>Flutter-based cross-platform mobile application</sub><br>
+        <a href="https://github.com/niiabe/zooped-flowos">GitHub</a>
+      </td>
+    </tr>
   </table>
 </div>
 
 ### Graphic Design
 | Project | Tool | Link |
 |---------|------|------|
+| Zooped Logo | Custom | [View](https://github.com/niiabe/zooped-flowos) |
 | CampBell Kiosk Logo | Custom | [View](https://github.com/niiabe/CampbellKiosk) |
 | Adwoa Kami Charity Foundation | Canva | [View](https://www.canva.com/design/DAG7YDxBp6M/9tETjVjfKeUTAk6N3QBswA/view) |
 | SOHI with NRSA | Canva | [View](https://www.canva.com/design/DAFjwGECJO4/ozLBtydsp-POJzh3ai6XQA/view) |
